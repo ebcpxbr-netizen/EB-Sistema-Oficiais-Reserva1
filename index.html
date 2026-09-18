@@ -122,6 +122,8 @@ footer{text-align:center;color:#778275;padding:25px;font-size:12px}
       <label for="consultaOM">OM</label>
       <select id="consultaOM">
         <option value="12º Batalhão de Infantaria">12º Batalhão de Infantaria</option>
+<option value="CPOR">CPOR</option>
+<option value="NPOR">NPOR</option>
       </select>
     </div>
   </div>
@@ -175,6 +177,8 @@ footer{text-align:center;color:#778275;padding:25px;font-size:12px}
         <label for="cadOM">OM</label>
         <select id="cadOM">
           <option value="12º Batalhão de Infantaria">12º Batalhão de Infantaria</option>
+<option value="CPOR">CPOR</option>
+<option value="NPOR">NPOR</option>
         </select>
       </div>
     </div>
@@ -316,7 +320,8 @@ function consultar(){
   resultado.innerHTML = encontrados.map(o => `
     <div class="official">
       <div class="row"><span class="key">Nome Completo</span><span class="value">${escapeHTML(o.nome)}</span></div>
-      <div class="row"><span class="key">OM</span><span class="value">${escapeHTML(o.om)}</span></div>
+      <div class="row"><span class="key">Posto / Graduação</span><span class="value">${escapeHTML(o.posto || "Aspirante-a-Oficial")}</span></div>
+<div class="row"><span class="key">OM</span><span class="value">${escapeHTML(o.om)}</span></div>
       <div class="row"><span class="key">CPF</span><span class="value">${escapeHTML(o.cpf)}</span></div>
       <div class="row"><span class="key">RG</span><span class="value">${escapeHTML(o.rg)}</span></div>
     </div>
@@ -343,6 +348,7 @@ function atualizarLista(){
       <thead>
         <tr>
           <th>Nome</th>
+          <th>Posto</th>
           <th>RG</th>
           <th>CPF</th>
           <th>OM</th>
@@ -352,6 +358,7 @@ function atualizarLista(){
         ${lista.map(o => `
           <tr>
             <td>${escapeHTML(o.nome)}</td>
+            <td>${escapeHTML(o.posto || "Aspirante-a-Oficial")}</td>
             <td>${escapeHTML(o.rg)}</td>
             <td>${escapeHTML(o.cpf)}</td>
             <td>${escapeHTML(o.om)}</td>
