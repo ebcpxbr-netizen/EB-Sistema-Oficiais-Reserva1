@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -6,376 +7,151 @@
 <title>Consulta Oficial R/2 — ACE</title>
 <style>
 *{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:Arial,Helvetica,sans-serif;
-  background:radial-gradient(circle at top,#18351f 0,#07120a 42%,#020503 100%);
-  color:#f2f5ef;
-  min-height:100vh;
-}
-header{
-  padding:28px 20px 18px;
-  text-align:center;
-  border-bottom:1px solid rgba(255,255,255,.12);
-  background:rgba(0,0,0,.28);
-}
-.badge{
-  display:inline-block;
-  padding:7px 14px;
-  border:1px solid #708c61;
-  border-radius:999px;
-  font-size:12px;
-  letter-spacing:2px;
-  color:#cbd8c4;
-}
-h1{margin:13px 0 5px;font-size:30px}
-.subtitle{color:#aeb8aa;margin:0}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:radial-gradient(circle at top,#18351f 0,#07120a 42%,#020503 100%);color:#f2f5ef;min-height:100vh}
+header{padding:28px 20px 18px;text-align:center;border-bottom:1px solid rgba(255,255,255,.12);background:rgba(0,0,0,.28)}
+.badge{display:inline-block;padding:7px 14px;border:1px solid #708c61;border-radius:999px;font-size:12px;letter-spacing:2px;color:#cbd8c4}
+h1{margin:13px 0 5px;font-size:30px}.subtitle{color:#aeb8aa;margin:0}
 .container{width:min(1050px,92%);margin:30px auto}
-.card{
-  background:rgba(10,18,12,.86);
-  border:1px solid rgba(174,195,163,.18);
-  border-radius:20px;
-  padding:25px;
-  margin-bottom:22px;
-  box-shadow:0 18px 50px rgba(0,0,0,.3);
-}
-.card h2{margin-top:0}
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:16px;
-}
+.card{background:rgba(10,18,12,.86);border:1px solid rgba(174,195,163,.18);border-radius:20px;padding:25px;margin-bottom:22px;box-shadow:0 18px 50px rgba(0,0,0,.3)}
+.card h2{margin-top:0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
 label{display:block;color:#c8d1c4;font-size:13px;margin-bottom:7px}
-input,select{
-  width:100%;
-  padding:13px 14px;
-  border-radius:11px;
-  border:1px solid #3a4c3c;
-  background:#0b130d;
-  color:#fff;
-  outline:none;
-}
+input,select{width:100%;padding:13px 14px;border-radius:11px;border:1px solid #3a4c3c;background:#0b130d;color:#fff;outline:none}
 input:focus,select:focus{border-color:#8da47e}
-button{
-  border:0;
-  border-radius:11px;
-  padding:13px 18px;
-  font-weight:bold;
-  cursor:pointer;
-  background:#a8bd98;
-  color:#091008;
-}
-button:hover{filter:brightness(1.08)}
-.actions{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap}
-.hidden{display:none!important}
-.result{
-  margin-top:20px;
-  border-top:1px solid rgba(255,255,255,.12);
-  padding-top:20px;
-}
-.official{
-  background:#0d180f;
-  border:1px solid #344a36;
-  border-radius:15px;
-  padding:18px;
-}
-.row{
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  padding:10px 0;
-  border-bottom:1px solid rgba(255,255,255,.07);
-}
-.row:last-child{border-bottom:0}
-.key{color:#9eaa9b}.value{font-weight:bold;text-align:right}
-.notice{color:#b9c5b5;font-size:13px;line-height:1.5}
-.error{color:#ff9b9b}
-.success{color:#bce5aa}
-#adminPanel{display:none}
-table{width:100%;border-collapse:collapse;margin-top:18px}
+button{border:0;border-radius:11px;padding:13px 18px;font-weight:bold;cursor:pointer;background:#a8bd98;color:#091008}
+button:hover{filter:brightness(1.08)}.actions{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap}
+.hidden{display:none!important}.result{margin-top:20px;border-top:1px solid rgba(255,255,255,.12);padding-top:20px}
+.official{background:#0d180f;border:1px solid #344a36;border-radius:15px;padding:18px}
+.row{display:flex;justify-content:space-between;gap:20px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.row:last-child{border-bottom:0}.key{color:#9eaa9b}.value{font-weight:bold;text-align:right}
+.notice{color:#b9c5b5;font-size:13px;line-height:1.5}.error{color:#ff9b9b}.success{color:#bce5aa}
+#adminPanel{display:none}table{width:100%;border-collapse:collapse;margin-top:18px}
 th,td{padding:12px 9px;border-bottom:1px solid rgba(255,255,255,.09);text-align:left;font-size:13px}
-th{color:#cbd6c6}
-.danger{background:#a84b4b;color:#fff}
+th{color:#cbd6c6}.danger{background:#a84b4b;color:#fff}
 footer{text-align:center;color:#778275;padding:25px;font-size:12px}
 </style>
 </head>
 <body>
-
 <header>
-  <span class="badge">SISTEMA INSTITUCIONAL • R/2</span>
-  <h1>CONSULTAR OFICIAL R/2</h1>
-  <p class="subtitle">Base de consulta e cadastro — ambiente demonstrativo</p>
+<span class="badge">SISTEMA INSTITUCIONAL • R/2</span>
+<h1>CONSULTAR OFICIAL R/2</h1>
+<p class="subtitle">Base de consulta e cadastro — ambiente demonstrativo</p>
 </header>
-
 <main class="container">
-
 <section class="card">
-  <h2>🔎 Consultar Oficial</h2>
-  <p class="notice">Informe o nome completo e a Organização Militar. A consulta retorna somente registros cadastrados neste sistema.</p>
-
-  <div class="grid">
-    <div>
-      <label for="consultaNome">Nome Completo</label>
-      <input id="consultaNome" type="text" placeholder="Digite o nome completo">
-    </div>
-    <div>
-      <label for="consultaOM">OM</label>
-      <select id="consultaOM">
-        <option value="12º Batalhão de Infantaria">12º Batalhão de Infantaria</option>
-<option value="CPOR">CPOR</option>
-<option value="NPOR">NPOR</option>
-      </select>
-    </div>
-  </div>
-
-  <div class="actions">
-    <button onclick="consultar()">Pesquisar Oficial</button>
-    <button onclick="limparConsulta()">Limpar</button>
-  </div>
-
-  <div id="resultado" class="result hidden"></div>
+<h2>🔎 Consultar Oficial</h2>
+<p class="notice">Informe o nome completo e a Organização Militar. A consulta retorna somente registros cadastrados neste sistema.</p>
+<div class="grid">
+<div><label for="consultaNome">Nome Completo</label><input id="consultaNome" type="text" placeholder="Digite o nome completo"></div>
+<div><label for="consultaOM">OM</label><select id="consultaOM">
+<option value="">Todas as OM</option>
+<option>12º Batalhão de Infantaria</option><option>CPOR</option><option>NPOR</option>
+</select></div>
+</div>
+<div class="actions"><button onclick="consultar()">Pesquisar Oficial</button><button onclick="limparConsulta()">Limpar</button></div>
+<div id="resultado" class="result hidden"></div>
 </section>
 
 <section class="card">
-  <h2>🛡️ Painel do ACE</h2>
-  <p class="notice">Área administrativa para cadastrar registros no banco local deste navegador.</p>
+<h2>🛡️ Painel do ACE</h2>
+<p class="notice">Área administrativa para cadastrar registros no banco Supabase deste sistema.</p>
+<div id="loginACE">
+<div class="grid">
+<div><label for="aceUser">Usuário</label><input id="aceUser" type="text" autocomplete="username" placeholder="Usuário do ACE"></div>
+<div><label for="acePass">Senha</label><input id="acePass" type="password" autocomplete="current-password" placeholder="Senha"></div>
+</div>
+<div class="actions"><button onclick="entrarACE()">Entrar no Painel</button></div>
+<p id="loginMsg" class="error"></p>
+</div>
 
-  <div id="loginACE">
-    <div class="grid">
-      <div>
-        <label for="aceUser">Usuário</label>
-        <input id="aceUser" type="text" autocomplete="username" placeholder="Usuário do ACE">
-      </div>
-      <div>
-        <label for="acePass">Senha</label>
-        <input id="acePass" type="password" autocomplete="current-password" placeholder="Senha">
-      </div>
-    </div>
-    <div class="actions">
-      <button onclick="entrarACE()">Entrar no Painel</button>
-    </div>
-    <p id="loginMsg" class="error"></p>
-  </div>
-
-  <div id="adminPanel">
-    <h3>Cadastrar Oficial R/2</h3>
-
-    <div class="grid">
-      <div>
-        <label for="cadNome">Nome Completo</label>
-        <input id="cadNome" type="text" placeholder="Nome completo">
-      </div>
-      <div>
-        <label for="cadRG">RG</label>
-        <input id="cadRG" type="text" placeholder="RG">
-      </div>
-      <div>
-        <label for="cadCPF">CPF</label>
-        <input id="cadCPF" type="text" inputmode="numeric" placeholder="CPF">
-      </div>
-      <div>
-        <label for="cadOM">OM</label>
-        <select id="cadOM">
-          <option value="12º Batalhão de Infantaria">12º Batalhão de Infantaria</option>
-<option value="CPOR">CPOR</option>
-<option value="NPOR">NPOR</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="actions">
-      <button onclick="cadastrar()">Cadastrar Oficial</button>
-      <button onclick="sairACE()">Sair</button>
-      <button class="danger" onclick="limparBase()">Apagar todos os registros</button>
-    </div>
-
-    <p id="cadMsg"></p>
-
-    <h3>Oficiais cadastrados</h3>
-    <div id="lista"></div>
-  </div>
+<div id="adminPanel">
+<h3>Cadastrar Oficial R/2</h3>
+<div class="grid">
+<div><label for="cadNome">Nome Completo</label><input id="cadNome" type="text" placeholder="Nome completo"></div>
+<div><label for="cadPosto">Posto/Graduação</label><select id="cadPosto">
+<option value="">Selecione</option><option>Aspirante-a-Oficial</option><option>2º Tenente</option><option>1º Tenente</option><option>Capitão</option><option>Major</option><option>Tenente-Coronel</option><option>Coronel</option>
+</select></div>
+<div><label for="cadRG">RG</label><input id="cadRG" type="text" placeholder="RG"></div>
+<div><label for="cadCPF">CPF</label><input id="cadCPF" type="text" inputmode="numeric" placeholder="CPF"></div>
+<div><label for="cadOM">OM</label><select id="cadOM">
+<option>12º Batalhão de Infantaria</option><option>CPOR</option><option>NPOR</option>
+</select></div>
+</div>
+<div class="actions"><button onclick="cadastrar()">Cadastrar Oficial</button><button onclick="sairACE()">Sair</button><button class="danger" onclick="limparBase()">Apagar todos os registros</button></div>
+<p id="cadMsg"></p>
+<h3>Oficiais cadastrados</h3><div id="lista"></div>
+</div>
 </section>
-
 </main>
+<footer>Sistema demonstrativo. Utilize somente dados fictícios em ambiente de demonstração.</footer>
 
-<footer>
-  Sistema demonstrativo. Não use dados pessoais reais em uma versão publicada sem implementar autenticação, controle de acesso e proteção adequada de dados.
-</footer>
-
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-const STORAGE_KEY = "ace_oficiais_r2_v1";
-const ACE_USER = "ACE-2026";
-const ACE_PASS = "ACE-2026";
-
-function getOficiais(){
-  try {
-    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-  } catch(e) {
-    return [];
-  }
-}
-
-function saveOficiais(lista){
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(lista));
-}
+const SUPABASE_URL="https://eglzoenpozaxfahqwltg.supabase.co";
+const SUPABASE_KEY="sb_publishable_aZaD94VTARYLAtXjBgQZ5Q_IXXyZElW";
+const supabaseClient=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
+const ACE_USER="ACE-2026",ACE_PASS="ACE-2026";
 
 function escapeHTML(text){
-  return String(text)
-    .replaceAll("&","&amp;")
-    .replaceAll("<","&lt;")
-    .replaceAll(">","&gt;")
-    .replaceAll('"',"&quot;")
-    .replaceAll("'","&#039;");
+return String(text??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;");
+}
+function msg(id,text,cls=""){const e=document.getElementById(id);e.className=cls;e.textContent=text;}
+
+async function entrarACE(){
+const user=document.getElementById("aceUser").value.trim(),pass=document.getElementById("acePass").value;
+if(user===ACE_USER&&pass===ACE_PASS){
+document.getElementById("loginACE").classList.add("hidden");document.getElementById("adminPanel").style.display="block";msg("loginMsg","");await atualizarLista();
+}else msg("loginMsg","Usuário ou senha incorretos.","error");
+}
+function sairACE(){document.getElementById("adminPanel").style.display="none";document.getElementById("loginACE").classList.remove("hidden");document.getElementById("acePass").value="";}
+
+async function cadastrar(){
+const nome=document.getElementById("cadNome").value.trim(),posto=document.getElementById("cadPosto").value,rg=document.getElementById("cadRG").value.trim(),cpf=document.getElementById("cadCPF").value.trim(),om=document.getElementById("cadOM").value;
+if(!nome||!posto||!rg||!cpf||!om){msg("cadMsg","Preencha todos os campos.","error");return;}
+const {data:dup,error:dupError}=await supabaseClient.from("oficiais").select("id").ilike("nome",nome).eq("om",om).limit(1);
+if(dupError){msg("cadMsg","Erro ao verificar o cadastro: "+dupError.message,"error");return;}
+if(dup&&dup.length){msg("cadMsg","Já existe um oficial com esse nome nesta OM.","error");return;}
+const {error}=await supabaseClient.from("oficiais").insert([{nome,posto,rg,cpf,om}]);
+if(error){msg("cadMsg","Erro ao cadastrar: "+error.message,"error");return;}
+["cadNome","cadRG","cadCPF"].forEach(id=>document.getElementById(id).value="");document.getElementById("cadPosto").value="";
+msg("cadMsg","Oficial cadastrado com sucesso.","success");await atualizarLista();
 }
 
-function entrarACE(){
-  const user = document.getElementById("aceUser").value.trim();
-  const pass = document.getElementById("acePass").value;
-
-  if(user === ACE_USER && pass === ACE_PASS){
-    document.getElementById("loginACE").classList.add("hidden");
-    document.getElementById("adminPanel").style.display = "block";
-    document.getElementById("loginMsg").textContent = "";
-    atualizarLista();
-  } else {
-    document.getElementById("loginMsg").textContent = "Usuário ou senha incorretos.";
-  }
-}
-
-function sairACE(){
-  document.getElementById("adminPanel").style.display = "none";
-  document.getElementById("loginACE").classList.remove("hidden");
-  document.getElementById("acePass").value = "";
-}
-
-function cadastrar(){
-  const nome = document.getElementById("cadNome").value.trim();
-  const rg = document.getElementById("cadRG").value.trim();
-  const cpf = document.getElementById("cadCPF").value.trim();
-  const om = document.getElementById("cadOM").value;
-
-  const msg = document.getElementById("cadMsg");
-
-  if(!nome || !rg || !cpf){
-    msg.className = "error";
-    msg.textContent = "Preencha Nome Completo, RG e CPF.";
-    return;
-  }
-
-  const lista = getOficiais();
-
-  const duplicado = lista.some(o =>
-    o.nome.toLowerCase() === nome.toLowerCase() &&
-    o.om === om
-  );
-
-  if(duplicado){
-    msg.className = "error";
-    msg.textContent = "Já existe um oficial com esse nome nesta OM.";
-    return;
-  }
-
-  lista.push({
-    id: crypto.randomUUID ? crypto.randomUUID() : String(Date.now()),
-    nome,
-    rg,
-    cpf,
-    om,
-    criadoEm: new Date().toLocaleString("pt-BR")
-  });
-
-  saveOficiais(lista);
-
-  document.getElementById("cadNome").value = "";
-  document.getElementById("cadRG").value = "";
-  document.getElementById("cadCPF").value = "";
-
-  msg.className = "success";
-  msg.textContent = "Oficial cadastrado com sucesso.";
-  atualizarLista();
-}
-
-function consultar(){
-  const nome = document.getElementById("consultaNome").value.trim().toLowerCase();
-  const om = document.getElementById("consultaOM").value;
-  const resultado = document.getElementById("resultado");
-
-  if(!nome){
-    resultado.classList.remove("hidden");
-    resultado.innerHTML = '<p class="error">Digite o nome completo para pesquisar.</p>';
-    return;
-  }
-
-  const encontrados = getOficiais().filter(o =>
-    o.om === om && o.nome.toLowerCase().includes(nome)
-  );
-
-  resultado.classList.remove("hidden");
-
-  if(!encontrados.length){
-    resultado.innerHTML = '<p>Nenhum oficial encontrado para os dados informados.</p>';
-    return;
-  }
-
-  resultado.innerHTML = encontrados.map(o => `
-    <div class="official">
-      <div class="row"><span class="key">Nome Completo</span><span class="value">${escapeHTML(o.nome)}</span></div>
-      <div class="row"><span class="key">Posto / Graduação</span><span class="value">${escapeHTML(o.posto || "Aspirante-a-Oficial")}</span></div>
+async function consultar(){
+const nome=document.getElementById("consultaNome").value.trim().toLowerCase(),om=document.getElementById("consultaOM").value,resultado=document.getElementById("resultado");
+if(!nome){resultado.classList.remove("hidden");resultado.innerHTML='<p class="error">Digite o nome completo para pesquisar.</p>';return;}
+let q=supabaseClient.from("oficiais").select("nome,posto,rg,cpf,om").ilike("nome","%"+nome+"%");
+if(om)q=q.eq("om",om);
+const {data,error}=await q.order("nome",{ascending:true});
+resultado.classList.remove("hidden");
+if(error){resultado.innerHTML='<p class="error">Erro na consulta: '+escapeHTML(error.message)+'</p>';return;}
+if(!data?.length){resultado.innerHTML="<p>Nenhum oficial encontrado para os dados informados.</p>";return;}
+resultado.innerHTML=data.map(o=>`<div class="official">
+<div class="row"><span class="key">Nome Completo</span><span class="value">${escapeHTML(o.nome)}</span></div>
+<div class="row"><span class="key">Posto/Graduação</span><span class="value">${escapeHTML(o.posto)}</span></div>
 <div class="row"><span class="key">OM</span><span class="value">${escapeHTML(o.om)}</span></div>
-      <div class="row"><span class="key">CPF</span><span class="value">${escapeHTML(o.cpf)}</span></div>
-      <div class="row"><span class="key">RG</span><span class="value">${escapeHTML(o.rg)}</span></div>
-    </div>
-  `).join("");
+<div class="row"><span class="key">CPF</span><span class="value">${escapeHTML(o.cpf)}</span></div>
+<div class="row"><span class="key">RG</span><span class="value">${escapeHTML(o.rg)}</span></div>
+</div>`).join("");
 }
 
-function limparConsulta(){
-  document.getElementById("consultaNome").value = "";
-  document.getElementById("resultado").classList.add("hidden");
-  document.getElementById("resultado").innerHTML = "";
+function limparConsulta(){document.getElementById("consultaNome").value="";document.getElementById("consultaOM").value="";document.getElementById("resultado").classList.add("hidden");document.getElementById("resultado").innerHTML="";}
+
+async function atualizarLista(){
+const box=document.getElementById("lista");box.innerHTML='<p class="notice">Carregando...</p>';
+const {data,error}=await supabaseClient.from("oficiais").select("nome,posto,rg,cpf,om").order("nome",{ascending:true});
+if(error){box.innerHTML='<p class="error">Erro ao carregar: '+escapeHTML(error.message)+'</p>';return;}
+if(!data?.length){box.innerHTML='<p class="notice">Nenhum registro cadastrado.</p>';return;}
+box.innerHTML=`<table><thead><tr><th>Nome</th><th>Posto</th><th>RG</th><th>CPF</th><th>OM</th></tr></thead><tbody>${data.map(o=>`<tr><td>${escapeHTML(o.nome)}</td><td>${escapeHTML(o.posto)}</td><td>${escapeHTML(o.rg)}</td><td>${escapeHTML(o.cpf)}</td><td>${escapeHTML(o.om)}</td></tr>`).join("")}</tbody></table>`;
 }
 
-function atualizarLista(){
-  const lista = getOficiais();
-  const box = document.getElementById("lista");
-
-  if(!lista.length){
-    box.innerHTML = '<p class="notice">Nenhum registro cadastrado.</p>';
-    return;
-  }
-
-  box.innerHTML = `
-    <table>
-      <thead>
-        <tr>
-          <th>Nome</th>
-          <th>Posto</th>
-          <th>RG</th>
-          <th>CPF</th>
-          <th>OM</th>
-        </tr>
-      </thead>
-      <tbody>
-        ${lista.map(o => `
-          <tr>
-            <td>${escapeHTML(o.nome)}</td>
-            <td>${escapeHTML(o.posto || "Aspirante-a-Oficial")}</td>
-            <td>${escapeHTML(o.rg)}</td>
-            <td>${escapeHTML(o.cpf)}</td>
-            <td>${escapeHTML(o.om)}</td>
-          </tr>
-        `).join("")}
-      </tbody>
-    </table>
-  `;
+async function limparBase(){
+if(!confirm("Tem certeza que deseja apagar TODOS os registros?"))return;
+const {error}=await supabaseClient.from("oficiais").delete().not("id","is",null);
+if(error){msg("cadMsg","Erro ao apagar: "+error.message,"error");return;}
+msg("cadMsg","Base apagada com sucesso.","success");await atualizarLista();
 }
 
-function limparBase(){
-  if(confirm("Tem certeza que deseja apagar TODOS os registros deste navegador?")){
-    localStorage.removeItem(STORAGE_KEY);
-    atualizarLista();
-    document.getElementById("cadMsg").textContent = "Base local apagada.";
-  }
-}
+document.getElementById("acePass").addEventListener("keydown",e=>{if(e.key==="Enter")entrarACE();});
 </script>
 </body>
 </html>
